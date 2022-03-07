@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} Application de Recherche d'emploi {% endblock %}</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h1>Formulaire de recherche</h1>
+
+        <form action="/"  method="POST"> 
+            
+            <label>Veuillez choisir une localité :
+            <select id="villes" name="villes">
+                <option value="pas de préférence">pas de préférence</option>
+                {% for v in villes %}
+                    <option value= '{{v}}'>{{ v }}</option>
+                {% endfor %}
+            </select>
+            </label>
+
+            <label>Veuillez choisir un type de contrat :
+            <select id="contrats" name="typeDeContrat">
+                <option value="pas de préférence">pas de préférence</option>
+                {% for c in contrats %}
+                    <option value= '{{c}}'>{{ c }}</option>
+                {% endfor %}
+            </select>
+            </label>
+
+            <label>Veuillez choisir des motsCles :
+            <select id="mots" name="motsCles">
+                <option value="pas de préférence">pas de préférence</option>
+                {% for m in mots %}
+                    <option value='{{m}}'>{{ m }}</option>
+                {% endfor %}
+            </select>
+            </label>
+
+            <br>
+            <input type="submit">Envoyer</input>
+            <br>       
+         
+        </form>
+
+    {% if void_get %}
+    <p>Vous devez rentrer au moins une valeur!</p>
+    {% endif %}
+
+    {% if msg %}
+    
+    <table> 
+            {% for i in msg %}
+            <tr>
+                {% for c in i %}
+                <td>
+                    <br> 
+                    {{ c }}
+                    <br>
+                </td>
+                {% endfor %}   
+            </tr>
+            {% endfor %}
+    </table>
+    {% endif %}
+    <form class="registration"  action="http://localhost:5000/template_lm" method="post" >
+        <ul style="list-style: none;">
+            <li><input type="text" name="nom" placeholder="Nom"  size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="prenom" placeholder="Prénom" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="adresse" placeholder="Adresse" size="30" style='width:450px' step="0.01"></li>
+            <li><input type="text" name="codePostal" placeholder="Code Postal" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="ville" placeholder="Ville" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="telephone" placeholder="Téléphone" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="email" name="mail" placeholder="Mail" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="qualite" placeholder="Vos Qualités" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="etudeEnCours" placeholder="Etude en cours" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="idAnnonce" placeholder="ID Annonce" size="30" style='width:450px' step="0.01"/></li>
+        </ul>  
+        <label class="submit-button" action="http://localhost:5000/template_lm" method="post" >
+            <button class="button is-primary is-rounded"> &nbsp; &ensp;Générer &ensp; &nbsp;</button>
+        </label>  
+    
+    </form> 
+</body>
+</html>
+        

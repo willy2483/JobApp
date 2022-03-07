@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire pour Lettre de motivation</title>
+</head>
+<body>
+
+    <style>
+        input:invalid {
+            border: 2px dashed red;
+        }
+        
+        input:valid {
+            border: 1px solid black;
+        }
+    </style>
+
+    <form method="POST" action="result.html">
+        <ul style="list-style: none;">
+            <li><input type="text" name="nom" placeholder="Nom"  size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="prenom" placeholder="Prénom" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="adresse" placeholder="Adresse" size="30" style='width:450px' step="0.01"></li>
+            <li><input type="text" name="codePostal" placeholder="Code Postal" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="ville" placeholder="Ville" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="telephone" placeholder="Téléphone" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="email" name="mail" placeholder="Mail" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="qualite" placeholder="Vos Qualités" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="etudeEnCours" placeholder="Etude en cours" size="30" style='width:450px' step="0.01"/></li>
+            <li><input type="text" name="idAnnonce" placeholder="ID Annonce" size="30" style='width:450px' step="0.01"/></li>
+        </ul>  
+        <button type="submit" formaction="result.html">Envoyer</button>
+        <br>
+    </form>
+    <a href="/result">{{ mtc }}</a>   
+           
+        <a href=""></a>
+    </form>
+</body>
+</html>

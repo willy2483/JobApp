@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lettre de motivation</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="w3.css">
+</head>
+<body>
+
+    <div name="user" id="coordonnees">
+        <ul>
+            <p> {{ nom }} {{ prenom }} </p>
+            <p> {{ adresse }} ,  {{ codePostal }} ,  {{ ville }} </p>
+            <p> {{ telephone }} </p>
+            <p> {{ mail }}</p>
+            <br>
+            <br>
+        </ul>
+    </div>
+
+    <div class="w3-container w3-border w3-large">
+        <div class="w3-right-align" name="date" id="date">
+        <label for="date">  Fait le,  {{ now }}  à  {{ ville }} </label>
+        <br>
+        </div>
+    </div>
+
+    <div class="" id="objet">
+        <p>Objet : Candidature au poste de  {{ intituler }} </p>
+        <br>
+    </div>
+
+    <div>
+        <p> {{ text }} </p>
+    </div>
+
+    <div class="w3-container w3-border w3-large">
+        <div class="" name="texte">
+            <p></p>
+        </div>
+    </div>
+
+</body>
+</html>
